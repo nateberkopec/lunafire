@@ -1,6 +1,16 @@
 require 'erubi'
 require 'dotenv/load'
 require 'twitter'
+require 'nokogiri'
+
+require 'open-uri'
+require 'net/http'
+
+url = "https://www.fireweatheravalanche.org/wildfire/incident/155594/new-mexico/luna-fire?fbclid=IwAR0GP3NzRT1iLwvhucMHhKUz3xBrtySKYdIS9h5DL1MFcpIX5NlawRP9Cwo-fire"
+uri = URI.parse(url)
+response = Net::HTTP.get_response(uri).body
+response= Nokogiri::HTML(response)
+@acreage = response.css(".facts .fact")[1].css(".highlight").text
 
 client = Twitter::REST::Client.new do |config|
   config.consumer_key        = ENV["CONSUMER_API_KEY"]
