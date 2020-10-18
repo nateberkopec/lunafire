@@ -28,6 +28,11 @@ jobs:
         bundle install --jobs 4 --retry 3
     - name: make site 
       run: bundle exec ruby sitegen.rb
+      env:
+        CONSUMER_API_KEY: ${{ secrets.CONSUMER_API_KEY }}
+        CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
+        ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
+        ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
     - name: deploy to S3
       uses: jakejarvis/s3-sync-action@master
       if: contains(github.ref, 'master')

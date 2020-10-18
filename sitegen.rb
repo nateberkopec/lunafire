@@ -1,5 +1,5 @@
 require 'erubi'
-require 'dotenv/load' if ENV["DOTENV"]
+require 'dotenv/load' unless ENV["CI"]
 require 'twitter'
 require 'nokogiri'
 
@@ -21,7 +21,7 @@ end
 
 unless ENV["NO_UPDATE_FEED"]
   trusted_accounts = %w[
-    NWSAlbuquerque jesse_proctor Bewickwren SWCCNewsNotes RioFernandoFD CarsonNF
+    NWSAlbuquerque jesse_proctor Bewickwren SWCCNewsNotes RioFernandoFD CarsonNF taosnews
   ]
 
   tweets_to_feature = trusted_accounts.map do |acct| 
