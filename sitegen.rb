@@ -28,4 +28,4 @@ end
 src = File.read('index.html.erb')
 final = eval(Erubi::Engine.new(src).src)
 
-File.write("index.html", final)
+File.write("dist/index.html", final)
