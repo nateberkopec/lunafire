@@ -1,5 +1,5 @@
 require 'erubi'
-require 'dotenv/load'
+require 'dotenv/load' if ENV["DOTENV"]
 require 'twitter'
 require 'nokogiri'
 
