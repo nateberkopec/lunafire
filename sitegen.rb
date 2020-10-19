@@ -28,7 +28,7 @@ unless ENV["NO_UPDATE_FEED"]
     client.search("from:#{acct} Luna OR #LunaFire").to_a
   end.flatten.sort_by(&:created_at).reverse
 
-  @feed_items = tweets_to_feature.map do |tweet|
+  @feed_items = tweets_to_feature.take(25).map do |tweet|
     client.oembed(tweet.id).html
   end
 else
