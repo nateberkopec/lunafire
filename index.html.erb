@@ -11,8 +11,8 @@
           <h1>Luna Fire Information</h1>
           <p>This website provides up-to-the-minute information on the Luna Fire, in New Mexico's Taos, Mora and Colfax counties. This website is updated every ten minutes. </p>
           <p>
-            <b>Last updated:</b> <%= Time.now.utc.localtime("-06:00") %> MDT
-            <b>Current total acreage:</b> <%= @acreage %> acres.
+            <b>Last updated:</b> <%= Time.now.utc.localtime("-06:00").strftime("%b %e, %l:%M %p") %> MDT
+            <b>Size:</b> <%= @acreage %> acres
             <b>Cause:</b> Unknown
           </p>
         </div>
