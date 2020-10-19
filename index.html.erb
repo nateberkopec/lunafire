@@ -13,19 +13,43 @@
       <div class="row">
         <div class="column">
           <h1>Luna Fire Information</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
           <p>This website provides up-to-the-minute information on the Luna Fire, in New Mexico's Taos, Mora and Colfax counties. This website is updated every ten minutes. </p>
+        </div>
+        <div class="column">
           <p>
-            <b>Last updated:</b> <%= Time.now.utc.localtime("-06:00").strftime("%b %e, %l:%M %p") %> MDT
-            <b>Size:</b> <%= @acreage %> acres (Source: USFS)
+            <b>Last updated:</b> <%= Time.now.utc.localtime("-06:00").strftime("%b %e, %l:%M %p") %> MDT <br>
+            <b>Size:</b> <%= @acreage %> acres (Source: USFS) <br>
             <b>Cause:</b> Unknown
           </p>
-          <p>
-            Distance from: 
-            <b>Chacon:</b> 2 miles
-            <b>Taos:</b> 26 miles
-            <b>Angel Fire:</b> 14 miles
-            <b>Mora:</b> 16 miles
-          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column" style="margin-bottom: 2.0rem">
+          <details>
+            <summary>What is this website?</summary>
+            <p>This website aggregates information from many sources on the Luna Fire, which is currently burning in Taos, Mora and Colfax counties in New Mexico.</p>
+            <p>This site only posts official fire information and easily verified factual claims (e.g. air assets verified by ADS-B, photos of the fire, etc). It is not affiiliated with any organization, official or unofficial.</p>
+            <p>This website is built and maintained by <a href="mailto:nate.berkopec@gmail.com">Nate Berkopec</a>, a resident of the Taos area. It is not official information and should not be quoted directly.</p>
+            <p>This is a free and open source project. You can contribute <a href="https://github.com/nateberkopec/lunafire">on GitHub.</a></p>
+          </details>
+          <details>
+            <summary>Sources</summary>
+            <ul>
+              <li><a href="https://www.fireweatheravalanche.org/wildfire/incident/155594/new-mexico/luna-fire?fbclid=IwAR0GP3NzRT1iLwvhucMHhKUz3xBrtySKYdIS9h5DL1MFcpIX5NlawRP9Cwo-fire">Fire, Weather and Avalanche Center</a></li>
+              <li><a href="https://www.facebook.com/CarsonNF">Carson National Forest</a></li>
+              <li><a href="https://www.facebook.com/Angel-Fire-Fire-Dept-1063082687042210">Angel Fire Fire Department</a></li>
+              <li><a href="https://www.facebook.com/taosnews">Taos News</a></li>
+              <li><a href`"https://inciweb.nwcg.gov/incident/7246">Inciweb</a></li>
+            </ul>
+          </details>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
           <h2>Closures/Evacuations</h2>
           <p>This list is updated manually and may not be up-to-date. Please pay attention to local authorities.</p>
           <ul>
@@ -38,30 +62,26 @@
             <li><b>Oct 18</b>: Eagle Nest Lake is closed to boaters. The public is asked to avoid Forest Road 76. Angel Fire is under total outdoor burn ban. Source: <a href="https://www.facebook.com/Angel-Fire-Fire-Dept-1063082687042210">Angel Fire Fire Department</a></li>
             <li><b>Oct 18</b>: Several <a href="https://en.wikipedia.org/wiki/Incident_management_team">Type 1 teams</a>, 6 Large Air Tankers, 2 Very Large Air Tankers, and several helicopters have already responded or are on the way. Source: <a href="https://twitter.com/SWCCNewsNotes">Southwest Coordination Center</a></li>
           </ul>
+          <h2>Fire Location</h2>
+          <p>
+            Distance from: 
+            <ul>
+              <li><b>Chacon:</b> 2 miles</li>
+              <li><b>Taos:</b> 26 miles</li>
+              <li><b>Angel Fire:</b> 14 miles</li>
+              <li><b>Mora:</b> 16 miles</li>
+            </ul>
+          </p>
+        </div>
+        <div class="column maps">
+          <h2>Infrared Satellite</h2>
+          <i>May be delayed by up to 12 hours. Red is most recent.</i>
+          <iframe src="https://sartopo.com/map.html#ll=36.32176,-105.41931&z=10&b=mbt&a=modis_mp"></iframe>
+          <h2>Live Imaging Satellite (GOES)</h2>
+          <iframe src="https://caltopo.com/map.html#ll=36.32176,-105.41931&z=9&b=goes_0&a=mba%2Cgoesfire"></iframe>
         </div>
       </div>
       <div class="row">
-        <div class="column maps">
-          <h2>Maps</h2>
-          <h3>Infrared Satellites</h3>
-          <i>May be delayed by up to 12 hours. Red is most recent.</i>
-          <iframe src="https://sartopo.com/map.html#ll=36.32176,-105.41931&z=10&b=mbt&a=modis_mp"></iframe>
-          <h3>Live Imaging Satellite (GOES)</h3>
-          <iframe src="https://caltopo.com/map.html#ll=36.32176,-105.41931&z=9&b=goes_0&a=mba%2Cgoesfire"></iframe>
-          <h2>More Information Sources</h2>
-          <ul>
-            <li><a href="https://www.fireweatheravalanche.org/wildfire/incident/155594/new-mexico/luna-fire?fbclid=IwAR0GP3NzRT1iLwvhucMHhKUz3xBrtySKYdIS9h5DL1MFcpIX5NlawRP9Cwo-fire">Fire, Weather and Avalanche Center</a></li>
-            <li><a href="https://www.facebook.com/CarsonNF">Carson National Forest</a></li>
-            <li><a href="https://www.facebook.com/Angel-Fire-Fire-Dept-1063082687042210">Angel Fire Fire Department</a></li>
-            <li><a href="https://www.facebook.com/taosnews">Taos News</a></li>
-            <li><a href`"https://inciweb.nwcg.gov/incident/7246">Inciweb</a></li>
-          </ul>
-          <h2>What is This?</h2>
-          <p>This website aggregates information from many sources on the Luna Fire, which is currently burning in Taos, Mora and Colfax counties in New Mexico.</p>
-          <p>This site only posts official fire information and easily verified factual claims (e.g. air assets verified by ADS-B, photos of the fire, etc).</p>
-          <p>This website is built and maintained by <a href="mailto:nate.berkopec@gmail.com">Nate Berkopec</a>, a resident of the Taos area. It is not official information and should not be quoted directly.</p>
-          <p>This is a free and open source project. You can contribute <a href="https://github.com/nateberkopec/lunafire">on GitHub.</a></p>
-        </div>
         <div class="column"> 
           <h2>Feed</h2>
           <i>Please wait for images to load</i>

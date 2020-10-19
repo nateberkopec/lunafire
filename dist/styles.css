@@ -642,3 +642,8 @@ body {
   width: 100%;
   height: 400px;
 }
+
+summary {
+  font-weight: 500;
+  cursor: pointer;
+}
