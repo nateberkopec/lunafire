@@ -28,11 +28,17 @@ unless ENV["NO_UPDATE_FEED"]
     client.search("from:#{acct} Luna OR #LunaFire").to_a
   end.flatten.sort_by(&:created_at).reverse
 
-  @feed_items = tweets_to_feature.take(25).map do |tweet|
+  @feed_items = tweets_to_feature.take(24).map do |tweet|
     client.oembed(tweet.id).html
+  end
+
+  featured_photos = [1318271437841391617, 1317994852194287616]
+  @featured = featured_photos.map do |tweet|
+    client.oembed(tweet).html
   end
 else
   @feed_items = []
+  @featured = []
 end
 
 src = File.read('index.html.erb')

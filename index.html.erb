@@ -83,9 +83,32 @@
       </div>
       <div class="row">
         <div class="column"> 
-          <h2>Feed</h2>
+          <h2>Featured Photos</h2>
           <i>Please wait for images to load</i>
-          <% @feed_items.each do |i| %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <%= @featured.first.to_s %>
+        </div>
+        <div class="column">
+          <%= @featured.last.to_s %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column"> 
+          <h2>Live Updates</h2>
+          <i>Please wait for images to load</i>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <% @feed_items.each_slice(2).map(&:first).each do |i| %>
+            <%= i.to_s %>
+          <% end %>
+        </div>
+        <div class="column">
+          <% @feed_items.each_slice(2).map(&:last).each do |i| %>
             <%= i.to_s %>
           <% end %>
         </div>
