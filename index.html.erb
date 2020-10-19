@@ -3,6 +3,10 @@
   <head>
     <title>Luna Fire Information</title>
     <link href="styles.css" rel="stylesheet">
+    <meta property=”og:title” content=”Live Updates on #LunaFire” />
+    <meta property=”og:type” content=”website” />
+    <meta property=”og:description” content=”Live updates on the #LunaFire near Chacon, New Mexico.” />
+    <meta property=”og:image” content=”/og.jpg” />
   </head>
   <body>
     <div class="container">
@@ -14,6 +18,13 @@
             <b>Last updated:</b> <%= Time.now.utc.localtime("-06:00").strftime("%b %e, %l:%M %p") %> MDT
             <b>Size:</b> <%= @acreage %> acres
             <b>Cause:</b> Unknown
+          </p>
+          <p>
+            Distance from: 
+            <b>Chacon:</b> 2 miles
+            <b>Taos:</b> 26 miles
+            <b>Angel Fire:</b> 14 miles
+            <b>Mora:</b> 16 miles
           </p>
         </div>
       </div>
