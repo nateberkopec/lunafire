@@ -23,9 +23,10 @@
         <div class="column">
           <p>
             <b>Last updated:</b> <%= Time.now.utc.localtime("-06:00").strftime("%b %e, %l:%M %p") %> MDT <br>
-            <b>Size:</b> 8000 acres (Source: USFS) <br>
+            <b>Size:</b> <%= @acreage %> acres<br>
             <b>Containment</b>: 0% <br>
-            <b>Cause:</b> Unknown
+            <b>Personnel on-scene:</b> <%= @personnel %> <br>
+            <b>Cause:</b> <%= @cause %>
           </p>
         </div>
       </div>

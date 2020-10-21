@@ -6,11 +6,14 @@ require 'nokogiri'
 require 'open-uri'
 require 'net/http'
 
-url = "https://www.fireweatheravalanche.org/wildfire/incident/155594/new-mexico/luna-fire?fbclid=IwAR0GP3NzRT1iLwvhucMHhKUz3xBrtySKYdIS9h5DL1MFcpIX5NlawRP9Cwo-fire"
+url = "https://inciweb.nwcg.gov/incident/7246"
 uri = URI.parse(url)
 response = Net::HTTP.get_response(uri).body
 response= Nokogiri::HTML(response)
-@acreage = response.css(".facts .fact")[1].css(".highlight").text
+@acreage = response.css(".table-incident")[1].css("tr")[1].css("td").last.text.split(" ").first
+@personnel = response.css(".table-incident")[1].css("tr")[0].css("td").last.text
+@cause = response.css(".table-incident")[0].css("tr")[2].css("td").last.text
+
 
 client = Twitter::REST::Client.new do |config|
   config.consumer_key        = ENV["CONSUMER_API_KEY"]
