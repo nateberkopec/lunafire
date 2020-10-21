@@ -32,7 +32,7 @@ unless ENV["NO_UPDATE_FEED"]
     client.oembed(tweet.id).html
   end
 
-  featured_photos = [1318271437841391617, 1317994852194287616]
+  featured_photos = [1318705945069846533, 1318708284979859456]
   @featured = featured_photos.map do |tweet|
     client.oembed(tweet).html
   end
