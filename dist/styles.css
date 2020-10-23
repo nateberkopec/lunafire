@@ -452,7 +452,7 @@
    align-self: center;
  }
  
- @media (min-width: 40rem) {
+ @media (min-width: 42rem) {
    .row {
      flex-direction: row;
      margin-left: -1.0rem;
@@ -553,7 +553,7 @@
    padding-right: 0;
  }
  
- @media (min-width: 40rem) {
+ @media (min-width: 42rem) {
    table {
      display: table;
      overflow-x: initial;
